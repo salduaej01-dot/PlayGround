@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>TOUGE // NIGHT RUN</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><rect width=%2216%22 height=%2216%22 fill=%22%230a0e17%22/><path d=%22M2 12 6 4h3l-2 4h4l-3 4H5l2-4H3z%22 fill=%22%23ff477e%22/></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="Touge drift racing game"></canvas>
+    <div class="scanlines"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">///</span><span>TOUGE</span><small>NIGHT RUN</small></div>
+      <div class="run-state"><span class="dot"></span><span id="statusText">STANDBY</span></div>
+      <button id="soundBtn" class="icon-btn" aria-label="Toggle sound">♪</button>
+    </header>
+
+    <section class="hud" aria-live="polite">
+      <div class="hud-block score-block"><span class="eyebrow">DRIFT SCORE</span><strong id="score">000000</strong><span id="combo" class="combo">NO COMBO</span></div>
+      <div class="hud-block center-block"><span class="eyebrow">RUN TIME</span><strong id="timer">00:00.0</strong><div class="progress"><i id="progressFill"></i></div></div>
+      <div class="hud-block speed-block"><span class="eyebrow">SPEED</span><strong><span id="speed">000</span><small> KM/H</small></strong><span id="gear" class="gear">N</span></div>
+    </section>
+
+    <div id="startPanel" class="panel start-panel">
+      <div class="route-label">MT. AKINA // SECTOR 01</div>
+      <h1>CHASE<br><em>THE APEX</em></h1>
+      <p class="intro">A mountain pass. One clean run.<br>Leave nothing but tire smoke.</p>
+      <button id="startBtn" class="primary-btn">START NIGHT RUN <span>→</span></button>
+      <div class="controls-note"><span>← →</span> STEER <span>SPACE</span> HANDBRAKE</div>
+    </div>
+
+    <div id="finishPanel" class="panel finish-panel hidden">
+      <div class="route-label">SECTOR COMPLETE</div><h2>RUN<br><em>RECORDED</em></h2>
+      <div class="result-row"><span>FINAL SCORE</span><b id="finalScore">000000</b></div>
+      <div class="result-row"><span>BEST COMBO</span><b id="finalCombo">x0.0</b></div>
+      <button id="againBtn" class="primary-btn">RUN IT BACK <span>↻</span></button>
+    </div>
+
+    <div id="tip" class="tip">TIP: HOLD SPACE THROUGH CORNERS TO LINK YOUR DRIFT</div>
+    <div class="touch-controls"><button data-key="left">◀</button><button data-key="brake">✦</button><button data-key="right">▶</button></div>
+    <div class="corner corner-a"></div><div class="corner corner-b"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
